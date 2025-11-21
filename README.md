@@ -202,3 +202,24 @@ llm_model_v1/
   - É possível controlar qual modelo será utilizado definindo uma variável, por exemplo:
 ```bash
 export LLM_MODEL_VERSION=v1.2
+```
+
+## 7) Desenho arquitetural simples
+
+### 1) Ingestão
+
+Ingestão
+  ->
+Indexação
+
+### 2) Busca
+
+Guardrails (sanitize / políticas)
+  ->
+Retrieval
+  ->
+Montagem do contexto
+  ->
+Resposta com citações
+  ->
+Logging / Observabilidade
