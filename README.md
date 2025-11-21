@@ -1,4 +1,4 @@
-# Projeto: [Nome do Projeto]
+# Projeto: RAG
 
 ## Descrição
 Breve descrição do projeto, seu propósito e contexto. Por exemplo:
