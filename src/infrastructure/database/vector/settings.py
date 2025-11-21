@@ -7,7 +7,7 @@ class VectorStorageSettings(BaseSettings):
         """
         Cria e retorna uma instância do QdrantClient conectada ao endereço configurado.
         """
-        client = QdrantClient(url="127.0.0.1:6333")
+        client = QdrantClient(url="http://qdrant:6333")
         return client
 
 vectorStorageSettings = VectorStorageSettings()
