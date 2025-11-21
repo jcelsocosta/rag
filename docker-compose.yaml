@@ -1,0 +1,22 @@
+services:
+  qdrant:
+    image: qdrant/qdrant:v1.9.0
+    ports:
+      - "6333:6333"
+      - "6334:6334"
+    volumes:
+      - qdrant_data:/qdrant/storage
+  rag-api:
+    container_name: rag-api
+    image: rag-api
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    restart: on-failure:3
+    ports:
+      - "8080:8080"
+    depends_on:
+      - qdrant
+
+volumes:
+  qdrant_data:

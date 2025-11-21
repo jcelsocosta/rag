@@ -26,6 +26,6 @@ RUN poetry install
 
 RUN poetry run python -m spacy download pt_core_news_sm
 
-EXPOSE 3032
+EXPOSE 8080
 
 CMD ["poetry", "run", "server"]

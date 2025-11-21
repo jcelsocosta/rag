@@ -87,23 +87,23 @@ class SearchUseCase:
                 """
                 request_end = time.perf_counter()
 
-                latencia_total_ms = round((request_end - request_start) * 1000)
-                latencia_retrieval_ms = round((retrieval_end - retrieval_start) * 1000)
-                estimativa_tokens_prompt = round(len(input.message) / 4)
-                estimativa_tokens_response = round(len(answer_text) / 4)
-                total_tokens = estimativa_tokens_prompt + estimativa_tokens_response
+                latency_total_ms = round((request_end - request_start) * 1000)
+                latency_retrieval_ms = round((retrieval_end - retrieval_start) * 1000)
+                estimated_tokens_prompt = round(len(input.message) / 4)
+                estimated_tokens_response = round(len(answer_text) / 4)
+                total_tokens = estimated_tokens_prompt + estimated_tokens_response
 
                 metrics = {
-                    "latencia_total_ms": latencia_total_ms,
-                    "latencia_retrieval_ms": latencia_retrieval_ms,
+                    "latencia_total_ms": latency_total_ms,
+                    "latencia_retrieval_ms": latency_retrieval_ms,
                     "estimativa_tokens": total_tokens
                 }
                 log_entry = {
                     "timestamp": timestamp,
-                    "latencia_total_ms": latencia_total_ms,
-                    "latencia_retrieval_ms": latencia_retrieval_ms,
-                    "estimativa_tokens_prompt": estimativa_tokens_prompt,
-                    "estimativa_tokens_response": estimativa_tokens_response,
+                    "latencia_total_ms": latency_total_ms,
+                    "latencia_retrieval_ms": latency_retrieval_ms,
+                    "estimativa_tokens_prompt": estimated_tokens_prompt,
+                    "estimativa_tokens_response": estimated_tokens_response,
                     "estimativa_tokens": total_tokens,
                     "top_k": top_k,
                     "tamanho_contexto": len(knowledge_base),
